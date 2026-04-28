@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "echo \"Dummy build script required for Autocode Compile\"",
-    "ts-compile": "npx tsc"
-
+    "ts-compile": "npx tsc",
+    "compile": "sass src/scss:dist",
+    "dev": "sass src/scss:dist --watch"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "sass": "^1.99.0",
     "typescript": "^6.0.2"
   }
 }
