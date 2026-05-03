@@ -16,7 +16,7 @@ function getSelectedOption<T extends string>(
   const summary = button.closest<HTMLElement>(".product-summary");
   const option = summary?.querySelector<HTMLInputElement | HTMLSelectElement>(`[data-product-option="${optionName}"]`);
 
-  return (option?.value || fallbackValue) as T;
+  return (option?.value ?? fallbackValue) as T;
 }
 
 function getSelectedQuantity(button: HTMLElement): number {
@@ -40,7 +40,9 @@ function updateProductQuantity(button: HTMLElement, direction: 1 | -1): void {
 
 function animateAddButton(button: HTMLButtonElement): void {
   button.classList.remove("button--cart-feedback");
-  void button.offsetWidth;
+
+  button.getBoundingClientRect();
+
   button.classList.add("button--cart-feedback");
 
   window.setTimeout(() => {
@@ -90,6 +92,7 @@ export function initCartInteractions(): void {
       message: `${product.name} added to cart`,
       type: "success",
     });
+
     animateAddButton(addButton);
   });
 }

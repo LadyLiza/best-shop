@@ -63,7 +63,9 @@ export function renderProductCard(product: ProductCardData): HTMLElement {
     article.dataset.productId = product.id;
   }
 
-  const productUrl = product.productUrl ?? `/html/product.html${product.id ? `?id=${product.id}` : ""}`;
+  const productIdParam = product.id ? `?id=${product.id}` : "";
+  const defaultProductUrl = `/html/product.html${productIdParam}`;
+  const productUrl = product.productUrl ?? defaultProductUrl;
 
   article.innerHTML = `
     <div class="product-card__image">

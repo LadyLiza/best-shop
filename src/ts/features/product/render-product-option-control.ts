@@ -54,7 +54,7 @@ function setSelectedOption(control: HTMLElement, value: string): void {
   }
 
   if (label) {
-    label.textContent = selectedOption?.textContent?.trim() || value;
+    label.textContent = selectedOption?.textContent?.trim() ?? value;
   }
 
   options.forEach((option) => {

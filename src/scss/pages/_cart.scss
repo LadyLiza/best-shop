@@ -514,8 +514,7 @@ $cart-outer-gutter: math.div(vars.$container-gutter, 2);
   }
 
   .cart-items,
-  .cart-actions,
-  .cart-summary {
+  .cart-actions {
     grid-column: 2;
   }
 
@@ -528,9 +527,13 @@ $cart-outer-gutter: math.div(vars.$container-gutter, 2);
   }
 
   .cart-summary {
+    grid-column: 2;
     grid-row: 4;
+    width: 100%;
     margin-right: 0;
+    margin-bottom: 80px;
     margin-left: 0;
+    padding: 40px 34px 38px;
   }
 
   .page--cart > .page-hero {
@@ -576,6 +579,12 @@ $cart-outer-gutter: math.div(vars.$container-gutter, 2);
 
   .cart-item-row__price {
     grid-area: price;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    font-size: 17px;
   }
 
   .cart-item-row__quantity {
@@ -604,29 +613,17 @@ $cart-outer-gutter: math.div(vars.$container-gutter, 2);
 
   .cart-item-row__line-total {
     grid-area: total;
-  }
-
-  .cart-item-row__remove {
-    grid-area: remove;
-    justify-self: end;
-  }
-
-  .cart-item-row__price {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 14px;
-    width: 100%;
-    font-size: 17px;
-  }
-
-  .cart-item-row__line-total {
     display: inline-flex;
     align-items: center;
     gap: 12px;
     width: max-content;
     min-width: max-content;
     font-size: 17px;
+  }
+
+  .cart-item-row__remove {
+    grid-area: remove;
+    justify-self: end;
   }
 
   .cart-item-row__price::before,
@@ -661,12 +658,6 @@ $cart-outer-gutter: math.div(vars.$container-gutter, 2);
     padding-right: 16px;
     padding-left: 16px;
     font-size: 14px;
-  }
-
-  .cart-summary {
-    width: 100%;
-    padding: 40px 34px 38px;
-    margin-bottom: 80px;
   }
 
   .cart-summary__checkout {

@@ -208,7 +208,7 @@ function setFilterControlValue(input: HTMLInputElement, value: string): void {
   const placeholder = trigger?.dataset.placeholder ?? "";
 
   if (label) {
-    label.textContent = selectedOption?.textContent?.trim() || placeholder;
+    label.textContent = selectedOption?.textContent?.trim() ?? placeholder;
   }
 
   options.forEach((option) => {
