@@ -1,0 +1,13 @@
+@use "variables" as vars;
+
+@mixin image-overlay($overlay: vars.$overlay-image) {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: $overlay;
+    pointer-events: none;
+  }
+}

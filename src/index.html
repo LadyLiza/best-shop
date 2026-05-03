@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Best Shop</title>
-    <link rel="stylesheet" href="../dist/main.css" />
+    <link rel="stylesheet" href="/scss/main.scss" />
   </head>
-  <body>
-    <h1>Best Shop</h1>
+  <body data-page="home">
+    <div data-layout="header"></div>
+    <main class="page page--home" data-page-root="home"></main>
+    <div data-layout="benefits"></div>
+    <div data-layout="footer"></div>
+    <div data-layout="login-modal"></div>
+    <script type="module" src="/ts/main.ts"></script>
   </body>
 </html>

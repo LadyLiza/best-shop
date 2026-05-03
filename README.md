@@ -16,12 +16,62 @@ npm install
 
 ## Run the project
 
+Compile styles and start the local development server:
+
 ```bash
 npm run dev
 ```
 
-## Styles
+The `dev` script runs the Sass compilation first and places generated CSS files in `dist/css`. After that it starts a local Vite development server.
 
-SCSS files are located in `src/scss`.
+Vite is used only as a development server/tooling layer.
 
-Compiled CSS files are generated into `dist`.
+## Available scripts
+
+```bash
+npm run compile
+```
+
+Compiles SCSS files from `src/scss` into CSS files in `dist/css`.
+
+```bash
+npm run dev
+```
+
+Compiles SCSS and starts the local Vite development server.
+
+```bash
+npm run build
+```
+
+Compiles SCSS and runs TypeScript compilation.
+
+```bash
+npm run lint
+```
+
+Runs TypeScript and SCSS linters.
+
+```bash
+npm run lint:ts
+```
+
+Checks TypeScript files with ESLint.
+
+```bash
+npm run lint:scss
+```
+
+Checks SCSS files with Stylelint.
+
+```bash
+npm run ts-compile
+```
+
+Runs the TypeScript compiler.
+
+## Final Project Checklist
+
+The completed checklist is included in this repository.
+
+Self-assessment score: 63 / 64

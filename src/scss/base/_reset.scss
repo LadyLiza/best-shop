@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as vars;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: vars.$font-family-main;
+  font-weight: vars.$font-weight-regular;
+  color: vars.$color-black;
+  background: vars.$color-white;
+}
+
+img,
+svg {
+  display: block;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

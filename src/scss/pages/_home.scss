@@ -1,0 +1,929 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins";
+
+.component--home-intro-area {
+  margin: 0;
+  padding: 0 0 96px;
+  background: linear-gradient(to bottom, vars.$color-home-intro-bg 0 62%, vars.$color-white 62% 100%);
+}
+
+.component--home-hero {
+  width: min(vars.$container-page, calc(100% - vars.$container-gutter));
+  margin: 0 auto;
+  padding: 120px 0 150px;
+  color: vars.$color-home-accent;
+}
+
+.home-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 640px) minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.home-hero-content {
+  max-width: 640px;
+}
+
+.home-hero-title {
+  max-width: 560px;
+  margin: 0;
+  color: vars.$color-black;
+  font-size: 50px;
+  font-weight: vars.$font-weight-black;
+  line-height: 1.16;
+  letter-spacing: 0;
+}
+
+.home-hero-copy {
+  max-width: 640px;
+  margin: 31px 0 0;
+  color: vars.$color-text-muted-dark;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.home-hero-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 174px;
+  min-height: 60px;
+  margin-top: 30px;
+  color: vars.$color-white;
+  background: vars.$color-primary;
+  font-size: 18px;
+  font-weight: vars.$font-weight-bold;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.home-hero-media {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home-hero-media img {
+  width: min(128%, 820px);
+  max-width: none;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+}
+
+.component--intro-promo {
+  width: min(vars.$container-page, calc(100% - vars.$container-gutter));
+  position: relative;
+  z-index: 1;
+  margin: -124px auto 0;
+  padding: 0;
+  color: vars.$color-success;
+  background: vars.$color-white;
+  box-shadow: vars.$shadow-intro-promo;
+}
+
+.intro-promo-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  height: 566px;
+  margin: 0;
+}
+
+.intro-promo-story {
+  min-height: 0;
+  margin: 0;
+  padding: 91px 86px 76px 70px;
+  color: vars.$color-black;
+  background: vars.$color-white;
+  font-family: vars.$font-family-main;
+  text-align: left;
+}
+
+.intro-promo-author {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  width: fit-content;
+  margin: 0;
+}
+
+.intro-promo-author__avatar {
+  flex: 0 0 86px;
+  width: 86px;
+  height: 86px;
+  margin: 0;
+  max-width: none;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.intro-promo-author__content {
+  flex: 0 0 auto;
+}
+
+.intro-promo-author__name {
+  color: vars.$color-black;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.intro-promo-author__role {
+  margin-top: 7px;
+  color: vars.$color-black;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.intro-promo-title {
+  max-width: 494px;
+  margin: 38px 0 0;
+  color: vars.$color-black;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 47px;
+  letter-spacing: 0;
+}
+
+.intro-promo-copy {
+  max-width: 494px;
+  margin-top: 28px;
+  color: vars.$color-text-muted-dark;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.intro-promo-copy p {
+  margin: 0;
+}
+
+.intro-promo-copy p + p {
+  margin-top: 22px;
+}
+
+.intro-promo-discount-card {
+  @include mixins.image-overlay(vars.$overlay-image);
+
+  display: grid;
+  align-self: stretch;
+  align-items: center;
+  min-height: 0;
+  margin: 0;
+  padding: 0 70px;
+  overflow: hidden;
+  color: vars.$color-danger;
+  background-color: vars.$color-black;
+  background-image: url("/assets/images/home/suitcases-main-banner.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.intro-promo-discount-card__content {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+  font-family: vars.$font-family-main;
+  transform: translateY(28px);
+}
+
+.intro-promo-discount-title {
+  margin: 0;
+  color: vars.$color-white;
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.intro-promo-discount-copy {
+  max-width: 470px;
+  margin: 30px 0 0;
+  color: vars.$color-white;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  opacity: 0.82;
+}
+
+.component--intro-promo-discount-action {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.travel-suitcases {
+  width: min(vars.$container-wide, calc(100% - vars.$container-gutter));
+  margin: 119px auto 0;
+  color: vars.$color-black;
+}
+
+.travel-suitcases__header {
+  text-align: center;
+}
+
+.travel-suitcases__heading {
+  margin: 0;
+  color: vars.$color-black;
+  font-family: vars.$font-family-main;
+  font-size: 40px;
+  font-weight: vars.$font-weight-black;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.travel-suitcases__copy {
+  color: vars.$color-text-muted-dark;
+  font-family: vars.$font-family-main;
+  font-size: 17px;
+  font-weight: vars.$font-weight-regular;
+  line-height: 1;
+  opacity: 0.78;
+}
+
+.travel-suitcases-slider {
+  --travel-slides-visible: 4;
+  --travel-slider-gap: 44px;
+  --travel-card-width: 296px;
+  --travel-viewport-width: 1316px;
+
+  display: grid;
+  grid-template-areas:
+    "previous viewport next"
+    "dots dots dots";
+  grid-template-columns: 52px minmax(0, min(var(--travel-viewport-width), 100%)) 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.travel-suitcases-slider__viewport {
+  grid-area: viewport;
+  width: min(var(--travel-viewport-width), 100%);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.travel-suitcases-grid {
+  display: flex;
+  gap: var(--travel-slider-gap);
+  will-change: transform;
+  transition: transform 420ms ease;
+}
+
+.travel-suitcases-slider__control {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  color: vars.$color-white;
+  cursor: pointer;
+  background: vars.$color-primary;
+  border: 0;
+  font-family: vars.$font-family-main;
+  font-size: 36px;
+  font-weight: vars.$font-weight-bold;
+  line-height: 1;
+  transition:
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+.travel-suitcases-slider__control:hover,
+.travel-suitcases-slider__control:focus-visible {
+  background: vars.$color-primary-hover;
+  box-shadow: vars.$shadow-primary-action;
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.travel-suitcases-slider__control:disabled {
+  cursor: default;
+  box-shadow: none;
+  opacity: 0.38;
+  transform: none;
+}
+
+.travel-suitcases-slider__control--prev {
+  grid-area: previous;
+}
+
+.travel-suitcases-slider__control--next {
+  grid-area: next;
+}
+
+.travel-suitcases-slider__dots {
+  grid-area: dots;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.travel-suitcases-slider__dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  cursor: pointer;
+  background: vars.$color-border-control;
+  border: 0;
+  border-radius: 50%;
+  transition:
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.travel-suitcases-slider__dot:hover,
+.travel-suitcases-slider__dot:focus-visible,
+.travel-suitcases-slider__dot--active {
+  background: vars.$color-primary;
+  outline: none;
+  transform: scale(1.25);
+}
+
+.travel-suitcases-slider__dot[hidden] {
+  display: none;
+}
+
+.travel-suitcases + .product-showcase {
+  margin-top: 119px;
+}
+
+.travel-suitcase-card {
+  @include mixins.image-overlay(linear-gradient(to bottom, vars.$overlay-image-soft, vars.$overlay-image-deep));
+
+  flex: 0 0 min(var(--travel-card-width), 100%);
+  width: min(var(--travel-card-width), 100%);
+  height: 600px;
+  overflow: hidden;
+  color: vars.$color-white;
+  transition:
+    box-shadow 240ms ease,
+    transform 240ms ease;
+}
+
+.travel-suitcase-card::before {
+  z-index: 1;
+  transition: background 240ms ease;
+}
+
+.travel-suitcase-card:hover {
+  box-shadow: vars.$shadow-travel-card-hover;
+  transform: translateY(-4px);
+}
+
+.travel-suitcase-card:hover::before {
+  background: vars.$overlay-travel-card-hover;
+}
+
+.travel-suitcase-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 320ms ease;
+}
+
+.travel-suitcase-card:hover .travel-suitcase-card__image {
+  transform: scale(1.06);
+}
+
+.travel-suitcase-card__content {
+  display: grid;
+  grid-template-rows: 48px auto;
+  row-gap: 20px;
+  position: absolute;
+  top: 397px;
+  right: vars.$container-gutter;
+  left: vars.$container-gutter;
+  z-index: 2;
+}
+
+.travel-suitcase-card__title {
+  margin: 0;
+  color: vars.$color-white;
+  font-family: vars.$font-family-main;
+  font-size: 19px;
+  font-weight: vars.$font-weight-bold;
+  line-height: 24px;
+  opacity: 0.92;
+}
+
+.travel-suitcase-card__text {
+  margin: 0;
+  color: vars.$color-white;
+  font-family: vars.$font-family-main;
+  font-size: 19px;
+  font-weight: vars.$font-weight-regular;
+  line-height: 24px;
+  opacity: 0.81;
+}
+
+.customer-reviews {
+  width: min(vars.$container-wide, calc(100% - vars.$container-gutter));
+  margin: 138px auto 132px;
+  color: vars.$color-black;
+}
+
+.customer-reviews__header {
+  text-align: center;
+}
+
+.customer-reviews__heading {
+  margin: 0;
+  color: vars.$color-black;
+  font-family: vars.$font-family-main;
+  font-size: 40px;
+  font-weight: vars.$font-weight-black;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.customer-reviews__details {
+  margin: 16px 0 0;
+  color: vars.$color-text-muted-dark;
+  font-family: vars.$font-family-main;
+  font-size: 17px;
+  font-weight: vars.$font-weight-regular;
+  line-height: 1;
+}
+
+.customer-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 420px));
+  justify-content: center;
+  gap: 20px;
+  margin-top: 72px;
+}
+
+.customer-review-card {
+  width: 100%;
+  min-height: 336px;
+  padding: 44px 56px 43px;
+  background: vars.$color-white;
+  text-align: center;
+  box-shadow: vars.$shadow-card;
+}
+
+.customer-review-card__avatar {
+  display: flex;
+  justify-content: center;
+}
+
+.customer-review-card__avatar img {
+  width: 98px;
+  height: 98px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.customer-review-card__text {
+  max-width: 380px;
+  margin: 28px auto 0;
+  color: vars.$color-text-heading;
+  font-family: vars.$font-family-main;
+  font-size: 17px;
+  font-weight: vars.$font-weight-regular;
+  line-height: 1.45;
+}
+
+.customer-review-card__author {
+  margin-top: 28px;
+  color: vars.$color-primary;
+  font-family: vars.$font-family-main;
+  font-size: 17px;
+  font-weight: vars.$font-weight-bold;
+  line-height: 1.25;
+}
+
+@media (max-width: 1280px) {
+  .home-hero-layout {
+    grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  }
+
+  .home-hero-media img {
+    width: min(112%, 680px);
+  }
+
+  .intro-promo-story {
+    padding: 72px 56px 64px;
+  }
+
+  .intro-promo-discount-card {
+    padding: 0 56px;
+  }
+
+  .travel-suitcases-slider {
+    --travel-slides-visible: 4;
+    --travel-slider-gap: 28px;
+    --travel-card-width: 250px;
+    --travel-viewport-width: 1084px;
+
+    gap: 20px;
+  }
+
+  .travel-suitcase-card {
+    flex-basis: min(var(--travel-card-width), 100%);
+    width: min(var(--travel-card-width), 100%);
+  }
+
+  .travel-suitcase-card__content {
+    grid-template-rows: 46px auto;
+    row-gap: 18px;
+    top: auto;
+    right: 32px;
+    bottom: 32px;
+    left: 32px;
+  }
+
+  .travel-suitcase-card__title,
+  .travel-suitcase-card__text {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .component--home-intro-area {
+    padding-bottom: 72px;
+    background: linear-gradient(to bottom, vars.$color-home-intro-bg 0 56%, vars.$color-white 56% 100%);
+  }
+
+  .component--home-hero {
+    padding: 80px 0 124px;
+  }
+
+  .home-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 44px;
+    text-align: center;
+  }
+
+  .home-hero-content,
+  .home-hero-title,
+  .home-hero-copy {
+    max-width: 680px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .home-hero-title {
+    font-size: 42px;
+  }
+
+  .home-hero-media {
+    justify-content: center;
+  }
+
+  .home-hero-media img {
+    width: min(100%, 620px);
+    transform: translateX(clamp(-48px, -8%, -24px));
+  }
+
+  .component--intro-promo {
+    margin-top: -80px;
+  }
+
+  .intro-promo-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .intro-promo-story {
+    padding: 56px 48px;
+  }
+
+  .intro-promo-title,
+  .intro-promo-copy {
+    max-width: 100%;
+  }
+
+  .intro-promo-discount-card {
+    min-height: 420px;
+    padding: 64px 48px;
+  }
+
+  .intro-promo-discount-card__content {
+    transform: none;
+  }
+
+  .travel-suitcases {
+    margin-top: 92px;
+  }
+
+  .travel-suitcases-slider {
+    --travel-slides-visible: 2;
+    --travel-slider-gap: 32px;
+    --travel-viewport-width: 624px;
+  }
+
+  .travel-suitcases + .product-showcase {
+    margin-top: 96px;
+  }
+
+  .customer-reviews {
+    margin-top: 104px;
+    margin-bottom: 104px;
+  }
+
+  .customer-reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 420px));
+    justify-content: center;
+    margin-top: 52px;
+  }
+}
+
+@media (max-width: 768px) {
+  .component--home-intro-area {
+    padding-bottom: 56px;
+    background: linear-gradient(to bottom, vars.$color-home-intro-bg 0 48%, vars.$color-white 48% 100%);
+  }
+
+  .component--home-hero {
+    padding: 56px 0 92px;
+  }
+
+  .home-hero-title {
+    font-size: 36px;
+    line-height: 1.18;
+  }
+
+  .home-hero-copy {
+    margin-top: 22px;
+    font-size: 15px;
+  }
+
+  .home-hero-action {
+    min-width: 156px;
+    min-height: 52px;
+    font-size: 15px;
+  }
+
+  .component--intro-promo {
+    margin-top: -48px;
+  }
+
+  .intro-promo-story {
+    padding: 42px 32px;
+  }
+
+  .intro-promo-author {
+    gap: 16px;
+  }
+
+  .intro-promo-author__avatar {
+    flex-basis: 64px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .intro-promo-title,
+  .intro-promo-discount-title {
+    font-size: 32px;
+    line-height: 1.18;
+  }
+
+  .intro-promo-copy,
+  .intro-promo-discount-copy {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .intro-promo-discount-card {
+    min-height: 360px;
+    padding: 48px 32px;
+  }
+
+  .travel-suitcases {
+    margin-top: 72px;
+  }
+
+  .travel-suitcases__heading,
+  .customer-reviews__heading {
+    font-size: 32px;
+  }
+
+  .travel-suitcases__copy,
+  .customer-reviews__details {
+    font-size: 17px;
+    line-height: 1.45;
+  }
+
+  .travel-suitcases-grid {
+    grid-template-columns: minmax(240px, 296px);
+    margin-top: 42px;
+  }
+
+  .travel-suitcase-card {
+    height: auto;
+    aspect-ratio: 296 / 480;
+  }
+
+  .travel-suitcase-card__content {
+    top: auto;
+    right: 30px;
+    bottom: 36px;
+    left: 30px;
+  }
+
+  .travel-suitcases + .product-showcase {
+    margin-top: 72px;
+  }
+
+  .customer-reviews {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+
+  .customer-reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  .customer-review-card {
+    min-height: 336px;
+    padding: 44px 32px 38px;
+  }
+}
+
+@media (max-width: 560px) {
+  .component--home-intro-area {
+    padding-bottom: 42px;
+    background: vars.$color-home-intro-bg;
+  }
+
+  .component--home-hero {
+    padding: 42px 0 56px;
+  }
+
+  .home-hero-title {
+    font-size: 30px;
+  }
+
+  .home-hero-layout {
+    gap: 32px;
+  }
+
+  .component--intro-promo {
+    margin-top: 0;
+    box-shadow: vars.$shadow-intro-promo-compact;
+  }
+
+  .intro-promo-story,
+  .intro-promo-discount-card {
+    padding: 36px 24px;
+  }
+
+  .intro-promo-author__name {
+    font-size: 17px;
+  }
+
+  .intro-promo-author__role,
+  .intro-promo-copy,
+  .intro-promo-discount-copy {
+    font-size: 14px;
+  }
+
+  .intro-promo-title,
+  .intro-promo-discount-title,
+  .travel-suitcases__heading,
+  .customer-reviews__heading {
+    font-size: 28px;
+  }
+
+  .intro-promo-discount-card {
+    min-height: 320px;
+  }
+
+  .component--intro-promo-discount-action {
+    min-height: 52px;
+    font-size: 15px;
+  }
+
+  .travel-suitcases-slider {
+    --travel-slides-visible: 1;
+    --travel-slider-gap: 24px;
+    --travel-viewport-width: 296px;
+
+    grid-template-areas:
+      "viewport viewport"
+      "previous next"
+      "dots dots";
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+    row-gap: 20px;
+  }
+
+  .travel-suitcase-card {
+    max-width: 296px;
+    margin: 0 auto;
+  }
+
+  .travel-suitcases-slider__viewport {
+    justify-self: center;
+  }
+
+  .travel-suitcases-slider__control {
+    width: 48px;
+    height: 48px;
+    justify-self: center;
+    font-size: 32px;
+  }
+
+  .travel-suitcase-card__title,
+  .travel-suitcase-card__text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .travel-suitcase-card__content {
+    grid-template-rows: 44px auto;
+  }
+}
+
+@media (max-width: 360px) {
+  .component--home-intro-area {
+    padding-bottom: 32px;
+  }
+
+  .component--home-hero,
+  .component--intro-promo,
+  .travel-suitcases,
+  .customer-reviews {
+    width: min(vars.$container-page, calc(100% - 24px));
+  }
+
+  .component--home-hero {
+    padding: 36px 0 44px;
+  }
+
+  .home-hero-layout {
+    gap: 24px;
+  }
+
+  .home-hero-title {
+    font-size: 25px;
+    line-height: 1.18;
+  }
+
+  .home-hero-copy {
+    max-width: 230px;
+    margin-top: 18px;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .home-hero-action {
+    min-width: 148px;
+    min-height: 48px;
+    margin-top: 26px;
+    padding: 0 18px;
+    font-size: 14px;
+  }
+
+  .home-hero-media img {
+    width: min(86%, 220px);
+    transform: translateX(-8px);
+  }
+
+  .intro-promo-story,
+  .intro-promo-discount-card {
+    padding: 30px 18px;
+  }
+
+  .intro-promo-title,
+  .intro-promo-discount-title {
+    font-size: 25px;
+  }
+
+  .intro-promo-copy,
+  .intro-promo-discount-copy {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .intro-promo-discount-card {
+    min-height: 300px;
+  }
+
+  .component--intro-promo-discount-action {
+    min-height: 48px;
+    padding: 0 18px;
+    font-size: 14px;
+  }
+}

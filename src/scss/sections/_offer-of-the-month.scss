@@ -1,0 +1,206 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins";
+
+.offer-of-the-month {
+  @include mixins.image-overlay(vars.$overlay-offer);
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  width: min(vars.$container-wide, calc(100% - vars.$container-gutter));
+  aspect-ratio: 1300 / 407;
+  margin: 128px auto 0;
+  padding: 78px 116px 0;
+  color: vars.$color-white;
+  font-family: vars.$font-family-main;
+  background-image: url("/assets/images/home/offer-of-the-month.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.offer-of-the-month__discount,
+.offer-of-the-month__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.offer-of-the-month__percent {
+  color: vars.$color-white;
+  font-size: 223px;
+  font-weight: vars.$font-weight-bold;
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.offer-of-the-month__discount-copy {
+  max-width: 650px;
+  margin: 10px 0 0 20px;
+  color: vars.$color-white;
+  font-size: 20px;
+  font-weight: vars.$font-weight-regular;
+  line-height: 1.45;
+}
+
+.offer-of-the-month__content {
+  justify-self: end;
+  width: min(410px, 100%);
+}
+
+.offer-of-the-month__title {
+  margin: 0;
+  color: vars.$color-white;
+  font-size: 40px;
+  font-weight: vars.$font-weight-bold;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.offer-of-the-month__copy {
+  margin: 30px 0 0;
+  color: vars.$color-white;
+  font-size: 17px;
+  font-weight: vars.$font-weight-regular;
+  line-height: 1.5;
+}
+
+.offer-of-the-month__action {
+  width: 202px;
+  min-width: 202px;
+  height: 62px;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: vars.$font-weight-bold;
+}
+
+@media (max-width: 1280px) {
+  .offer-of-the-month {
+    padding: 78px 72px 0;
+  }
+
+  .offer-of-the-month__percent {
+    font-size: 170px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .offer-of-the-month {
+    align-items: center;
+    aspect-ratio: auto;
+    column-gap: 44px;
+    min-height: 420px;
+    margin-top: 96px;
+    padding: 64px 48px;
+  }
+
+  .offer-of-the-month__discount,
+  .offer-of-the-month__content {
+    margin-bottom: 0;
+  }
+
+  .offer-of-the-month__percent {
+    font-size: 128px;
+  }
+
+  .offer-of-the-month__title {
+    font-size: 32px;
+    line-height: 1.18;
+  }
+}
+
+@media (max-width: 840px) {
+  .offer-of-the-month {
+    column-gap: 38px;
+    padding: clamp(68px, 9vw, 82px) 36px 44px;
+  }
+
+  .offer-of-the-month__percent {
+    font-size: 112px;
+  }
+
+  .offer-of-the-month__discount-copy {
+    margin-left: 0;
+    font-size: 16px;
+  }
+
+  .offer-of-the-month__title {
+    font-size: 30px;
+  }
+
+  .offer-of-the-month__copy {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .offer-of-the-month__action {
+    width: 178px;
+    min-width: 178px;
+    height: 56px;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 720px) {
+  .offer-of-the-month {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 32px;
+    min-height: 520px;
+    margin-top: 72px;
+    padding: 48px 32px;
+  }
+
+  .offer-of-the-month__content {
+    justify-self: start;
+  }
+
+  .offer-of-the-month__discount,
+  .offer-of-the-month__content {
+    justify-content: flex-start;
+  }
+
+  .offer-of-the-month__discount-copy,
+  .offer-of-the-month__action {
+    margin-top: 20px;
+  }
+
+  .offer-of-the-month__percent {
+    font-size: 96px;
+  }
+
+  .offer-of-the-month__discount-copy {
+    margin-left: 0;
+    font-size: 16px;
+  }
+
+  .offer-of-the-month__copy {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+
+  .offer-of-the-month__action {
+    width: 170px;
+    min-width: 170px;
+    height: 52px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 560px) {
+  .offer-of-the-month {
+    min-height: 480px;
+    padding: 36px 24px;
+  }
+
+  .offer-of-the-month__percent {
+    font-size: 74px;
+  }
+
+  .offer-of-the-month__title {
+    font-size: 28px;
+  }
+}

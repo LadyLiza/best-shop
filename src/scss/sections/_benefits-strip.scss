@@ -1,0 +1,235 @@
+@use "../abstracts/variables" as vars;
+
+.benefits-strip {
+  min-height: 192px;
+  background-color: vars.$color-text-muted-dark;
+  background-image: vars.$background-benefits-wave;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 192px;
+  color: vars.$color-white;
+}
+
+.benefits-strip__inner {
+  width: min(vars.$container-page, calc(100% - vars.$container-gutter));
+  margin: 0 auto;
+  padding: 40px 0 30px;
+}
+
+.benefits-strip__heading {
+  margin: 0 0 40px 5px;
+  color: vars.$color-white;
+  font-family: vars.$font-family-benefits;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.benefits-strip-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 42px;
+}
+
+.benefit-item {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.benefit-item__icon {
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.benefit-item__icon--plane {
+  background-image: url("/assets/icons/plane.svg");
+}
+
+.benefit-item__icon--truck {
+  background-image: url("/assets/icons/truck.svg");
+}
+
+.benefit-item__icon--coins {
+  background-image: url("/assets/icons/coins.svg");
+}
+
+.benefit-item__icon--graduation-cap {
+  background-image: url("/assets/icons/graduation-cap.svg");
+}
+
+.benefit-item__details {
+  margin: 0;
+  color: vars.$color-white;
+  font-family: vars.$font-family-helvetica-neue;
+  font-size: 15px;
+  font-weight: vars.$font-weight-helvetica-neue-medium;
+  line-height: 1.55;
+}
+
+@media (max-width: 1280px) {
+  .benefits-strip__inner {
+    width: min(vars.$container-page, calc(100% - 32px));
+  }
+
+  .benefits-strip-list {
+    gap: 28px;
+  }
+
+  .benefit-item {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 1120px) {
+  .benefits-strip {
+    min-height: 0;
+    background-size: auto 100%;
+  }
+
+  .benefits-strip__inner {
+    padding: 36px 0 32px;
+  }
+
+  .benefits-strip__heading {
+    margin-bottom: 34px;
+    margin-left: 5px;
+  }
+
+  .benefits-strip-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .benefit-item {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .benefit-item__icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .benefit-item__details {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 1020px) {
+  .benefits-strip__inner {
+    display: grid;
+    justify-content: center;
+    padding: 38px 0 36px;
+  }
+
+  .benefits-strip__heading {
+    justify-self: start;
+    margin-left: 5px;
+  }
+
+  .benefits-strip-list {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    gap: 32px clamp(56px, 10vw, 110px);
+  }
+
+  .benefit-item {
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 16px;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .benefit-item__icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .benefit-item__details {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 640px) and (min-width: 541px) {
+  .benefits-strip-list {
+    gap: 28px 36px;
+  }
+
+  .benefit-item {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .benefit-item__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .benefit-item__details {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 540px) {
+  .benefits-strip__inner {
+    display: grid;
+    justify-content: center;
+    padding: 34px 0;
+  }
+
+  .benefits-strip__heading {
+    justify-self: start;
+    margin-bottom: 28px;
+    font-size: 18px;
+  }
+
+  .benefits-strip-list {
+    grid-template-columns: max-content;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .benefit-item {
+    grid-template-columns: 48px max-content;
+    gap: 16px;
+    width: fit-content;
+    justify-self: center;
+  }
+
+  .benefit-item__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .benefit-item__details {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 340px) {
+  .benefit-item {
+    grid-template-columns: 44px max-content;
+    gap: 12px;
+  }
+
+  .benefit-item__icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .benefit-item__details {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+}

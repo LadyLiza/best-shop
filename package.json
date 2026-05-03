@@ -4,22 +4,30 @@
   "description": "Capstone Project TS Template",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo \"Dummy build script required for Autocode Compile\"",
-    "ts-compile": "npx tsc",
-    "compile": "sass src/scss:dist",
-    "dev": "sass src/scss:dist --watch"
+    "compile": "sass src/scss:dist/css",
+    "dev": "npm run compile && vite src --host 0.0.0.0",
+    "build": "npm run compile && npm run ts-compile && vite build src",
+    "lint": "npm run lint:ts && npm run lint:scss",
+    "lint:ts": "eslint \"src/ts/**/*.ts\"",
+    "lint:scss": "stylelint \"src/scss/**/*.scss\"",
+    "ts-compile": "tsc"
   },
   "repository": {
     "type": "git",
     "url": ""
   },
   "keywords": [],
-  "author": "",
+  "author": "Yelyzaveta Horiainova",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "sass": "^1.99.0",
-    "typescript": "^6.0.2"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.3.0",
+    "sass": "^1.93.3",
+    "stylelint": "^17.10.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.59.1",
+    "vite": "^5.4.21"
   }
 }

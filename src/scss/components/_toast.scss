@@ -1,0 +1,82 @@
+@use "../abstracts/variables" as vars;
+
+.toast-root {
+  position: fixed;
+  z-index: 950;
+  top: 24px;
+  right: 24px;
+  display: grid;
+  gap: 12px;
+  width: min(380px, calc(100vw - 48px));
+  pointer-events: none;
+}
+
+.toast {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 72px;
+  overflow: hidden;
+  padding: 16px 22px 16px 19px;
+  color: vars.$color-white;
+  background: vars.$color-text-muted-dark;
+  border-left: 4px solid vars.$color-primary;
+  box-shadow: vars.$shadow-toast;
+  font-family: vars.$font-family-main;
+  font-size: 15px;
+  font-weight: vars.$font-weight-bold;
+  line-height: 1.22;
+  opacity: 1;
+  transform: translateY(0);
+  animation: toast-enter 260ms ease both;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.toast::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 4px;
+  height: 3px;
+  content: "";
+  background: vars.$color-primary;
+  transform-origin: left center;
+  animation: toast-progress 2800ms linear forwards;
+}
+
+.toast--success {
+  border-left-color: vars.$color-primary;
+}
+
+.toast--error {
+  border-left-color: vars.$color-primary;
+}
+
+.toast--leaving {
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+}
+
+@keyframes toast-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toast-progress {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0);
+  }
+}

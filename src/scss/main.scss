@@ -1,4 +1,24 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
+@use "abstracts/mixins";
+@use "abstracts/_variables";
+@use "base/fonts";
+@use "base/reset";
+@use "components/buttons";
+@use "components/placeholders";
+@use "components/product-card";
+@use "components/scroll-to-top";
+@use "components/toast";
+@use "layouts/header";
+@use "layouts/footer";
+@use "layouts/modal";
+@use "sections/benefits-strip";
+@use "sections/offer-of-the-month";
+@use "sections/page-hero";
+@use "sections/product-showcase";
+@use "pages/home";
+@use "pages/catalog";
+@use "pages/product-details";
+@use "pages/cart";
+@use "pages/about";
+@use "pages/contact";
+
+

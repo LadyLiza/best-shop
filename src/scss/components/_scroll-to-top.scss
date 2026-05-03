@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as vars;
+
+.scroll-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 900;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  color: vars.$color-white;
+  cursor: pointer;
+  background: vars.$color-primary;
+  border: 0;
+  box-shadow: vars.$shadow-scroll-to-top;
+  transition:
+    background-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.scroll-to-top[hidden] {
+  display: none;
+}
+
+.scroll-to-top:hover,
+.scroll-to-top:focus-visible {
+  background: vars.$color-primary-hover;
+  box-shadow: vars.$shadow-scroll-to-top-hover;
+  transform: translateY(-2px);
+}
+
+.scroll-to-top__icon {
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  mask-image: url("/assets/icons/chevron-down.svg");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-image: url("/assets/icons/chevron-down.svg");
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  transform: rotate(180deg);
+}
+
+@media (max-width: 560px) {
+  .scroll-to-top {
+    right: 18px;
+    bottom: 18px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .scroll-to-top__icon {
+    width: 16px;
+    height: 16px;
+  }
+}
