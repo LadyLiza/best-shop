@@ -75,3 +75,7 @@ Runs the TypeScript compiler.
 The completed checklist is included in this repository.
 
 Self-assessment score: 63 / 64
+
+## Deployment
+
+Live demo: https://best-shop-....vercel.app
