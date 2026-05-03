@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "sass src/scss:dist/css",
     "dev": "npm run compile && vite src --host 0.0.0.0",
-    "build": "npm run compile && npm run ts-compile && vite build",
+    "build": "npm run compile && npm run ts-compile && vite build src",
     "lint": "npm run lint:ts && npm run lint:scss",
     "lint:ts": "eslint \"src/ts/**/*.ts\"",
     "lint:scss": "stylelint \"src/scss/**/*.scss\"",
